@@ -8,6 +8,7 @@ function check_SDK_tools_update(){
 		osascript -e 'display notification "New Android SDK Tools avaliable :'"$a"'" with title "New Android SDK Tools avaliable"'
 	else
 		echo $(date) "---> No New Android SDK Tools Update Avaliable"
+		osascript -e 'display notification "No New Android SDK Tools avaliable" with title "No New Android SDK Tools avaliable"'
 	fi
 }
 
@@ -16,9 +17,10 @@ function check_SDK_build_tools(){
 	# echo $b
 	if [ "$b" != '' ]; then
 		echo $(date) "---> New Android SDK Tools Update Ver.$b Avaliable"
-		osascript -e 'display notification "New Android SDK Build Tools avaliable :'"$b"'" with title "New Android SDK Tools avaliable"'
+		osascript -e 'display notification "New Android SDK Build Tools avaliable :'"$b"'" with title "New Android SDK Build Tools avaliable"'
 	else
 		echo $(date) "---> No New Android SDK Build Tools Update Avaliable"
+		osascript -e 'display notification "No New Android SDK Build Tools avaliable" with title "No New Android SDK Build Tools avaliable"'
 	fi
 }
 
@@ -27,9 +29,10 @@ function check_android_platform(){
 	# echo $c
 	if [ "$c" != '' ]; then
 		echo $(date) "---> New Android Platform Update Ver.$c Avaliable"
-		osascript -e 'display notification "New Android Platform avaliable :'"$c"'" with title "New Android SDK Tools avaliable"'
+		osascript -e 'display notification "New Android Platform avaliable :'"$c"'" with title "New Android Platform avaliable"'
 	else
 		echo $(date) "---> No New Android SDK Platform Update Avaliable"
+		osascript -e 'display notification "No New Android Platform avaliable" with title "No New Android Platform avaliable"'
 	fi
 }
 
@@ -52,6 +55,7 @@ check_avaliable_NDK(){
     osascript -e 'display notification "New Android NDK Avaliable :'"$ava_ndk"'" with title "New Android NDK Avaliable"'
   else
     echo $(date) "---> No New Android NDK Avaliable"
+    osascript -e 'display notification "No New Android NDK Avaliable" with title "No New Android NDK Avaliable"'
     echo
     #osascript -e 'display notification "No New Android NDK Avaliable" with title "No New Android NDK Avaliable"'
   fi
@@ -63,7 +67,7 @@ do
 	check_SDK_build_tools
 	check_android_platform
 	check_avaliable_NDK
-	sleep 1800
+  sleep 1800
 done
 
 
